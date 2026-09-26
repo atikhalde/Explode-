@@ -108,7 +108,8 @@ def main():
         if not mc:
             try:
                 import yfinance as yf
-                mc = yf.Ticker(sym).fast_info.get("market_cap") or 0
+                fi = yf.Ticker(sym).fast_info
+                mc = (getattr(fi, "market_cap", None) or 0) / 1  # rupees
             except Exception:
                 mc = 0
         f = core.compute_features(df, mc, today_vol_scale=scale)
