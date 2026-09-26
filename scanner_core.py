@@ -9,7 +9,7 @@ import pandas as pd
 
 CFG = dict(
     mcap_min=20e7, mcap_max=3000e7,      # ~Rs 20 Cr .. 3,000 Cr
-    px_min=5.0, px_max=5000.0,
+    px_min=50.0, px_max=5000.0,          # price floor Rs50 (user-requested filter)
     min_vol20=20_000,
     thr=dict(consec_up=3, upvol_skew=1.4, vol_ratio_5_60=1.25, dd52_min=22,
              low52_max=15, tightness=0.85, single_day_cap=6.5,
@@ -90,7 +90,9 @@ def compute_features(df, mcap=0, today_vol_scale=1.0):
 def score_symbol(f, thr=None, event=False):
     thr = thr or CFG["thr"]
     why, s = [], 0
-    if f["vol20"] < CFG["min_vol20"] or not (CFG["px_min"] <= f["close"] <= CFG["px_max"]):
+    if not (CFG["px_min"] <= f["close"] <= CFG["px_max"]):
+        return 0, "BELOW-RS50-FILTERED" if f["close"] < CFG["px_min"] else "ABOVE-PRICE-CAP", why
+    if f["vol20"] < CFG["min_vol20"]:
         return 0, "ILLIQUID", why
     exploded = f["n_explode"] >= 3 or f["ret10"] > thr["explode_ret10"]
     if f["consec_up"] >= thr["consec_up"]:

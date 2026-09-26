@@ -127,6 +127,9 @@ def main():
                 if r: rows.append(r)
             except Exception:
                 pass
+    if not rows:
+        print("WARNING: 0 symbols returned any data — yfinance/feed issue. Skipping run without alerting.")
+        return
     df = pd.DataFrame(rows).sort_values("score", ascending=False)
     out = Path(__file__).parent / "output"; out.mkdir(exist_ok=True)
     df.drop(columns=["why"], errors="ignore").to_csv(out / f"live_{now.strftime('%Y%m%d_%H%M')}.csv", index=False)

@@ -62,6 +62,11 @@ python3 live_scanner.py --max 200 --min-score 45   # quick test
 - Alert re-fire: same symbol same day re-alerts only if score **+10** higher
 - **Private repos**: free Actions = 2,000 min/month — switch cron to `*/30` or EOD-only
 
+## Universe filters (top of scanner_core.py)
+- Market cap **₹20 Cr – ₹3,000 Cr**, NSE only, yfinance screener
+- **Price ≥ ₹50** (`px_min`) — penny/operator quotes are auto-filtered (rating: ILLIQUID)
+- 20-day avg volume ≥ 20,000 shares (liquidity floor); NaN-bar tails dropped
+
 ## Notes & honest caveats
 - GitHub cron can be delayed a few minutes at peak; for true 15-min punctuality run
   the same script on a ₹0–400 VPS/Railway/Oracle-free-tier cron instead.
