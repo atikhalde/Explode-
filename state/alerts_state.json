@@ -39,9 +39,22 @@
 },
 "_digest_2026-10-07": true,
 "WEL.NS": {
-"date": "2026-10-09",
+"date": "2026-10-12",
 "score": 50
 },
 "_digest_2026-10-08": true,
-"_digest_2026-10-09": true
+"_digest_2026-10-09": true,
+"BBL.NS": {
+"date": "2026-10-12",
+"score": 54
+},
+"ONELIFECAP.NS": {
+"date": "2026-10-12",
+"score": 52
+},
+"WCIL.NS": {
+"date": "2026-10-12",
+"score": 50
+},
+"_digest_2026-10-12": true
 }
