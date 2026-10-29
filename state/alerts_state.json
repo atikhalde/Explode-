@@ -53,7 +53,7 @@
 "score": 52
 },
 "WCIL.NS": {
-"date": "2026-10-12",
+"date": "2026-10-29",
 "score": 50
 },
 "_digest_2026-10-12": true,
@@ -108,8 +108,13 @@
 },
 "_digest_2026-10-27": true,
 "EPACK.NS": {
-"date": "2026-10-28",
-"score": 54
+"date": "2026-10-29",
+"score": 56
 },
-"_digest_2026-10-28": true
+"_digest_2026-10-28": true,
+"PRIMESECU.NS": {
+"date": "2026-10-29",
+"score": 50
+},
+"_digest_2026-10-29": true
 }
