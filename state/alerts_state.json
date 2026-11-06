@@ -150,8 +150,8 @@
 },
 "_digest_2026-11-04": true,
 "GREENPANEL.NS": {
-"date": "2026-11-05",
-"score": 54
+"date": "2026-11-06",
+"score": 56
 },
 "SULA.NS": {
 "date": "2026-11-05",
@@ -166,12 +166,21 @@
 "score": 50
 },
 "SHRIRAMPPS.NS": {
-"date": "2026-11-05",
+"date": "2026-11-06",
 "score": 50
 },
 "MASTERTR.NS": {
 "date": "2026-11-05",
 "score": 50
 },
-"_digest_2026-11-05": true
+"_digest_2026-11-05": true,
+"FINOPB.NS": {
+"date": "2026-11-06",
+"score": 52
+},
+"MAHEPC.NS": {
+"date": "2026-11-06",
+"score": 52
+},
+"_digest_2026-11-06": true
 }
